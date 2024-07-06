@@ -3,7 +3,7 @@ from transformers import AutoTokenizer, AutoModelForCausalLM
 import os
 
 model_id = "TinyLlama/TinyLlama-1.1B-Chat-v1.0"
-output_onnx_path = "model.onnx"
+output_onnx_path = "model/model.onnx"
 
 # Load the model and tokenizer
 model = AutoModelForCausalLM.from_pretrained(model_id, use_cache=True).eval()
