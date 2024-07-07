@@ -41,7 +41,7 @@ def generate_response(compiled_model, tokenizer, input_text, temperature=1.0):
 
 # Streamlit UI
 def main():
-    st.title("Intel Chatbot")
+    st.title("IntellectBot")
 
     # Load the optimized model
     model_path = "D:\\intel\\IntelProj\\optimized_model\\model.xml"
