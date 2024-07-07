@@ -12,11 +12,11 @@ def load_model(model_path):
 
 # Preprocess input text
 def preprocess_input(input_text, tokenizer):
-    inputs = tokenizer(input_text, return_tensors="np", padding=True)
+    inputs = tokenizer(input_text, return_tensors="np", padding=True, truncation=True)
     return inputs["input_ids"]
 
 # Generate response using OpenVINO
-def generate_response(compiled_model, tokenizer, input_text, vocab):
+def generate_response(compiled_model, tokenizer, input_text, temperature=1.0):
     # Preprocess input text
     input_tensor = preprocess_input(input_text, tokenizer)
     
@@ -26,54 +26,52 @@ def generate_response(compiled_model, tokenizer, input_text, vocab):
     # Extract logits from the model output
     logits = outputs[compiled_model.output(0)]
     
+    # Apply temperature to logits
+    logits /= temperature
+    
     # Softmax to get probabilities
     probabilities = np.exp(logits) / np.sum(np.exp(logits), axis=-1, keepdims=True)
     
     # Sample a token
     sampled_token = np.random.choice(range(probabilities.shape[-1]), p=probabilities[0, -1])
     
-    # Ensure sampled token is within the vocabulary range
-    if sampled_token >= len(vocab):
-        sampled_token = sampled_token % len(vocab)
-    
     # Decode the token ID to text
-    response = vocab[sampled_token]
+    response = tokenizer.decode([sampled_token], skip_special_tokens=True)
     return response
 
 # Streamlit UI
 def main():
     st.title("Intel Chatbot")
-    
+
     # Load the optimized model
     model_path = "D:\\intel\\IntelProj\\optimized_model\\model.xml"
     compiled_model = load_model(model_path)
-    
+
     # Load the tokenizer
-    tokenizer = AutoTokenizer.from_pretrained("TinyLlama/TinyLlama-1.1B-Chat-v1.0")  # Replace "gpt2" with the correct model if needed
-    
-    # Define vocabulary
-    vocab = [
-        "hello", "how", "are", "you", "today", "good", "morning", "afternoon", "evening",
-        "what", "is", "your", "name", "nice", "to", "meet", "you", "tell", "me", "about",
-        "yourself", "can", "you", "help", "me", "yes", "no", "maybe", "thank", "you", "bye", "see", "you", "later",
-        "issue", "question", "help", "troubleshoot", "assistance", "resolve", 
-        "problem", "solution", "technical", "support", "feedback", "query", 
-        "status", "update", "escalate", "complaint", "agent", "team", "response", 
-        "contact", "call", "email", "chat", "waiting", "time", "priority", 
-        "urgent", "information", "details", "procedure", "policy", "confirmation", 
-        "feedback", "experience", "improve", "suggestion", "request", "thank", 
-        "sorry", "apology", "schedule", "appointment", "cancel", "feedback"
-    ]
-    
+    tokenizer = AutoTokenizer.from_pretrained("TinyLlama/TinyLlama-1.1B-Chat-v1.0")
+
+    # Initialize session state for messages
+    if "messages" not in st.session_state:
+        st.session_state.messages = []
+
+    # Display past messages
+    for message in st.session_state.messages:
+        with st.chat_message(message["role"]):
+            st.markdown(message["content"])
+
     # Input field for user
-    user_input = st.text_input("Enter your message:")
-    
-    if st.button("Send"):
-        if user_input:
-            # Generate response
-            bot_response = generate_response(compiled_model, tokenizer, user_input, vocab)
-            # Display response
-            st.text_area("Bot's response:", value=bot_response, height=100)
+    if user_input := st.chat_input("Enter your message:"):
+        st.session_state.messages.append({"role": "user", "content": user_input})
+        with st.chat_message("user"):
+            st.markdown(user_input)
+
+        # Generate response
+        bot_response = generate_response(compiled_model, tokenizer, user_input)
+        st.session_state.messages.append({"role": "assistant", "content": bot_response})
+
+        # Display response
+        with st.chat_message("assistant"):
+            st.markdown(bot_response)
 
 if __name__ == "__main__":
     main()
