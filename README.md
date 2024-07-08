@@ -54,7 +54,7 @@ This problem statement is designed to introduce beginners to the exciting field 
 
 ## Usage
 
-## Libraries used 
+### Libraries used 
 -Transformers: For using pre-trained models and performing inference.
 
 -OpenVINO: For optimizing and accelerating the model on Intel hardware.
@@ -69,5 +69,7 @@ This problem statement is designed to introduce beginners to the exciting field 
 
 -Streamlit: is a Python library that allows you to create interactive, web-based applications for data science and machine learning projects.
 
-## Major steps taken to create a chatbot.
-1. Choose 
+## Contributors
+
+
+
