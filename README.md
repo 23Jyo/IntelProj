@@ -10,11 +10,6 @@ This project is designed to introduce beginners to the exciting field of Generat
 - Large Language Models (LLM)
 - Natural Language Processing (NLP)
 
-### Pre-requisites
-- Understanding of Machine Learning Concepts.
-- Programming skills (Python, NLP libraries like Hugging Face, transformers).
-- Experience with natural language processing (NLP) and text-based AI models (e.g., language models, Chatbots).
-
 ## Description
 
 This problem statement is designed to introduce beginners to the exciting field of Generative Artificial Intelligence (GenAI) through a series of hands-on exercises. Participants will learn the basics of GenAI, perform simple Large Language Model (LLM) inference on a CPU, and explore the process of fine-tuning an LLM model to create a custom Chatbot.
@@ -46,7 +41,7 @@ This problem statement is designed to introduce beginners to the exciting field 
 2. Create a virtual environment:
     ```sh
     python -m venv venv
-    source venv/bin/activate  # On Windows use `venv\Scripts\activate`
+    venv\Scripts\activate  # to activate the environment
     ```
 
 3. Install dependencies:
@@ -59,38 +54,17 @@ This problem statement is designed to introduce beginners to the exciting field 
 
 ## Usage
 
-### Performing LLM Inference on CPU
+## Libraries used 
+-Transformers: For using pre-trained models and performing inference.
 
-1. Load the pre-trained model:
-    ```python
-    from transformers import pipeline
+-OpenVINO: For optimizing and accelerating the model on Intel hardware.
 
-    model = pipeline('question-answering', model='deepset/roberta-base-squad2')
-    ```
+-Optimum Intel: For integrating Hugging Face models with OpenVINO.
 
-2. Perform inference:
-    ```python
-    context = "Your context here."
-    question = "Your question here."
-    
-    result = model(question=question, context=context)
-    print(result)
-    ```
+-ONNX: For exporting models to the ONNX format.
 
-### Fine-tuning the Model
+-Numpy: For numerical operations.
 
-For fine-tuning instructions, refer to the provided Jupyter notebooks and scripts in the `notebooks` and `scripts` directories.
+-Torch: PyTorch for deep learning models (if used).
 
-## Reporting
-
-Participants are required to create a 5-page report on the problem, technical approach, and results. The report should include:
-
-1. Introduction to Generative AI and LLMs
-2. Technical approach to LLM inference on CPU
-3. Fine-tuning process and customization
-4. Creation of the custom Chatbot
-5. Results and conclusion
-
-## Contributing
-
-Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
+-Streamlit: is a Python library that allows you to create interactive, web-based applications for data science and machine learning projects.
