@@ -36,7 +36,7 @@ def top_p_sampling(logits, p):
     return selected_index
 
 # Generate response using OpenVINO
-def generate_response(compiled_model, tokenizer, input_text, temperature=1.0, top_k=50, top_p=0.9):
+def generate_response(compiled_model, tokenizer, input_text, temperature=0.2, top_k=50, top_p=0.9):
     # Preprocess input text
     input_tensor = preprocess_input(input_text, tokenizer)
     
