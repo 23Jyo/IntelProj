@@ -18,8 +18,8 @@ This problem statement is designed to introduce beginners to the exciting field 
 
 1. **Pre-trained language models can have large file sizes**, which may require significant storage space and memory to load and run.
 2. **Learn LLM inference on CPU.**
-3. **Understanding the concept of fine-tuning** and its importance in customizing LLMs.
-4. **Create a Custom Chatbot with Fine-tuned Pre-trained Large Language Models (LLMs)** using Intel AI Tools.
+3. **Understanding the concept of optimization using OpenVino** 
+4. **Create a Chatbot using Pre-trained Large Language Models (LLMs)** using Intel AI Tools.
 
 ## Setup and Installation
 
@@ -68,3 +68,6 @@ This problem statement is designed to introduce beginners to the exciting field 
 -Torch: PyTorch for deep learning models (if used).
 
 -Streamlit: is a Python library that allows you to create interactive, web-based applications for data science and machine learning projects.
+
+## Major steps taken to create a chatbot.
+1. Choose 
