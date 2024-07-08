@@ -15,8 +15,28 @@ def preprocess_input(input_text, tokenizer):
     inputs = tokenizer(input_text, return_tensors="np", padding=True, truncation=True)
     return inputs["input_ids"]
 
+# Top-k sampling
+def top_k_sampling(logits, k):
+    top_k_indices = np.argsort(logits)[-k:]
+    top_k_logits = logits[top_k_indices]
+    top_k_probs = np.exp(top_k_logits) / np.sum(np.exp(top_k_logits))
+    selected_index = np.random.choice(top_k_indices, p=top_k_probs)
+    return selected_index
+
+# Top-p (nucleus) sampling
+def top_p_sampling(logits, p):
+    sorted_indices = np.argsort(logits)[::-1]
+    sorted_logits = logits[sorted_indices]
+    cumulative_probs = np.cumsum(np.exp(sorted_logits) / np.sum(np.exp(sorted_logits)))
+    cutoff_index = np.searchsorted(cumulative_probs, p)
+    top_p_indices = sorted_indices[:cutoff_index + 1]
+    top_p_logits = logits[top_p_indices]
+    top_p_probs = np.exp(top_p_logits) / np.sum(np.exp(top_p_logits))
+    selected_index = np.random.choice(top_p_indices, p=top_p_probs)
+    return selected_index
+
 # Generate response using OpenVINO
-def generate_response(compiled_model, tokenizer, input_text, temperature=1.0):
+def generate_response(compiled_model, tokenizer, input_text, temperature=1.0, top_k=50, top_p=0.9):
     # Preprocess input text
     input_tensor = preprocess_input(input_text, tokenizer)
     
@@ -24,16 +44,16 @@ def generate_response(compiled_model, tokenizer, input_text, temperature=1.0):
     outputs = compiled_model([input_tensor])
     
     # Extract logits from the model output
-    logits = outputs[compiled_model.output(0)]
+    logits = outputs[compiled_model.output(0)][0, -1]
     
     # Apply temperature to logits
     logits /= temperature
     
-    # Softmax to get probabilities
-    probabilities = np.exp(logits) / np.sum(np.exp(logits), axis=-1, keepdims=True)
-    
-    # Sample a token
-    sampled_token = np.random.choice(range(probabilities.shape[-1]), p=probabilities[0, -1])
+    # Apply top-k and top-p sampling
+    if top_k > 0:
+        sampled_token = top_k_sampling(logits, top_k)
+    else:
+        sampled_token = top_p_sampling(logits, top_p)
     
     # Decode the token ID to text
     response = tokenizer.decode([sampled_token], skip_special_tokens=True)
@@ -75,3 +95,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
