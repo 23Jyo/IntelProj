@@ -34,8 +34,8 @@ This problem statement is designed to introduce beginners to the exciting field 
 
 1. Clone the repository:
     ```sh
-    git clone <repository-url>
-    cd <repository-directory>
+    git clone https://github.com/23Jyo/IntelProj.git
+    cd D:\intel\IntelProj
     ```
 
 2. Create a virtual environment:
@@ -52,6 +52,13 @@ This problem statement is designed to introduce beginners to the exciting field 
 4. Install Intel® OpenVINO™ toolkit:
     Follow the instructions at [Intel OpenVINO Installation Guide](https://docs.openvino.ai/latest/openvino_docs_install_guides_installing_openvino.html)
 
+5. For Running the Chatbot Interface:
+   ```sh
+   cd D:\intel\IntelProj\my_chatbot
+   .\myenv\Scripts\Activate.ps1  # to activate the environment
+   streamlit run chatbot_app.py
+   ```
+   
 ## Usage
 
 ### Libraries used 
