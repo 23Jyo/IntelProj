@@ -68,3 +68,15 @@ This problem statement is designed to introduce beginners to the exciting field 
 -Torch: PyTorch for deep learning models (if used).
 
 -Streamlit: is a Python library that allows you to create interactive, web-based applications for data science and machine learning projects.
+
+## Team Members
+
+-[Jyothsna Sara Abey](https://github.com/23Jyo)
+
+-[Aiswarya Rahul](https://github.com/aiswaryarahull)
+
+-[Cinta Susan Thomas](https://github.com/Cinta-Susan-Thomas)
+
+-[Jacksilin P Titus](https://github.com/jacksilin)
+
+-[Tebin Philip George](https://github.com/tebingeorge)
