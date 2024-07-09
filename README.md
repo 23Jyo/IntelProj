@@ -18,20 +18,20 @@ This project is designed to introduce beginners to the exciting field of Generat
 
 ## Description
 
-This problem statement is designed to introduce beginners to the exciting field of Generative Artificial Intelligence (GenAI) through a series of hands-on exercises. Participants will learn the basics of GenAI, perform simple Large Language Model (LLM) inference on a CPU, and explore the process of fine-tuning an LLM model to create a custom Chatbot.
+This problem statement is designed to introduce beginners to the exciting field of Generative Artificial Intelligence (GenAI) through a series of hands-on exercises. Participants will learn the basics of GenAI, perform simple Large Language Model (LLM) inference on a CPU, understanding the concept of optimization using OpenVINO , test inference and generate a Chatbot Interface.
 
 ## Major Challenges
 
 1. **Pre-trained language models can have large file sizes**, which may require significant storage space and memory to load and run.
 2. **Learn LLM inference on CPU.**
 3. **Understanding the concept of model optimization using OpenVINO** 
-4. **Create a Custom Chatbot with Fine-tuned Pre-trained Large Language Models (LLMs)** using Intel AI Tools.
+4. **Create a Chatbot with optimized Pre-trained Large Language Models (LLMs)** using Intel AI Tools.
 
 ## Setup and Installation
 
 ### Prerequisites
 
-- Python 3.7 or higher
+- Python 3.7 or higher(Here used Python 3.12.4)
 - Intel® OpenVINO™ toolkit
 - Hugging Face transformers library
 - Other dependencies listed in `requirements.txt`
@@ -77,7 +77,7 @@ This problem statement is designed to introduce beginners to the exciting field 
 
 -Numpy: For numerical operations.
 
--Torch: PyTorch for deep learning models (if used).
+-Torch: PyTorch for deep learning models.
 
 -Streamlit: is a Python library that allows you to create interactive, web-based applications for data science and machine learning projects.
 
