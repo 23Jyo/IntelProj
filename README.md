@@ -52,6 +52,13 @@ This problem statement is designed to introduce beginners to the exciting field 
 4. Install Intel® OpenVINO™ toolkit:
     Follow the instructions at [Intel OpenVINO Installation Guide](https://docs.openvino.ai/latest/openvino_docs_install_guides_installing_openvino.html)
 
+5. Running the chatbot website:
+    ```sh
+    D:\intel\IntelProj\my_chatbot
+    .\myenv\Scripts\Activate.ps1
+    streamlit run chatbot_app.py
+    ```
+
 ## Usage
 
 ## Libraries used 
