@@ -61,7 +61,7 @@ This problem statement is designed to introduce beginners to the exciting field 
 5. Running the chatbot website:
     ```sh
     D:\intel\IntelProj\my_chatbot
-    .\myenv\Scripts\Activate.ps1
+    .\myenv\Scripts\Activate.ps1  # to activate the environment
     streamlit run chatbot_app.py
     ```
 
