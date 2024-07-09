@@ -1,6 +1,12 @@
 # Running GenAI on Intel AI Laptops and Simple LLM Inference on CPU
 
-## Problem Statement
+This repository contains solution for Running GenAI on Intel AI Laptops and Simple LLM Inference on CPU. This project was done by Team Silicon Squad of Saintgits College of Engineering,as part of Intel Unnati Industrial Training.
+
+## Acknowledgement
+
+We would like to thank our institutional mentor, Dr. Pradeep C , for his support and guidance. We would also like to thank the industrial mentor, Mr Abhishek Nandy, for taking time out of his busy schedules to provide us with training and for answering our queries. We are very grateful to the Intel Unnati Team for this opportunity. We would like to extend our appreciation to anyone who has supported or helped us in one way or another.
+
+## Problem Statement 
 
 This project is designed to introduce beginners to the exciting field of Generative Artificial Intelligence (GenAI) through a series of hands-on exercises. Participants will learn the basics of GenAI, perform simple Large Language Model (LLM) inference on a CPU, and explore the process of fine-tuning an LLM model to create a custom Chatbot.
 
