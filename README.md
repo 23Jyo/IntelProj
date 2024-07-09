@@ -34,7 +34,7 @@ This problem statement is designed to introduce beginners to the exciting field 
 
 1. Clone the repository:
     ```sh
-    git clone <repository-url>
+    git clone https://github.com/23Jyo/IntelProj.git
     cd <repository-directory>
     ```
 
