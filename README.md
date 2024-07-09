@@ -1,6 +1,6 @@
 # Running GenAI on Intel AI Laptops and Simple LLM Inference on CPU
 
-This repository contains solution for Running GenAI on Intel AI Laptops and Simple LLM Inference on CPU. This project was done by Team Silicon Squad of Saintgits College of Engineering,as part of Intel Unnati Industrial Training.
+This repository contains solution for Running GenAI on Intel AI Laptops and Simple LLM Inference on CPU. This project was done by Team Silicon Squad of Saintgits College of Engineering, as a part of Intel Unnati Industrial Training.
 
 ## Acknowledgement
 
