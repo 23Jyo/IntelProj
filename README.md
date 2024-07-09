@@ -24,7 +24,7 @@ This problem statement is designed to introduce beginners to the exciting field 
 
 1. **Pre-trained language models can have large file sizes**, which may require significant storage space and memory to load and run.
 2. **Learn LLM inference on CPU.**
-3. **Understanding the concept of fine-tuning** and its importance in customizing LLMs.
+3. **Understanding the concept of model optimization using OpenVINO** 
 4. **Create a Custom Chatbot with Fine-tuned Pre-trained Large Language Models (LLMs)** using Intel AI Tools.
 
 ## Setup and Installation
@@ -60,7 +60,6 @@ This problem statement is designed to introduce beginners to the exciting field 
 
 5. Running the chatbot website:
     ```sh
-    D:\intel\IntelProj\my_chatbot
     .\myenv\Scripts\Activate.ps1  # to activate the environment
     streamlit run chatbot_app.py
     ```
