@@ -67,9 +67,9 @@ This problem statement is designed to introduce beginners to the exciting field 
 ## Usage
 
 ## Libraries used 
--Transformers: For using pre-trained models and performing inference.
+-`Transformers:` For using pre-trained models and performing inference.
 
--OpenVINO: For optimizing and accelerating the model on Intel hardware.
+-`OpenVINO:` For optimizing and accelerating the model on Intel hardware.
 
 -Optimum Intel: For integrating Hugging Face models with OpenVINO.
 
