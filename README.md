@@ -71,15 +71,15 @@ This problem statement is designed to introduce beginners to the exciting field 
 
 -`OpenVINO:` For optimizing and accelerating the model on Intel hardware.
 
--Optimum Intel: For integrating Hugging Face models with OpenVINO.
+-`Optimum Intel:` For integrating Hugging Face models with OpenVINO.
 
--ONNX: For exporting models to the ONNX format.
+-`ONNX:` For exporting models to the ONNX format.
 
--Numpy: For numerical operations.
+-`Numpy:` For numerical operations.
 
--Torch: PyTorch for deep learning models.
+-`Torch:` PyTorch for deep learning models.
 
--Streamlit: is a Python library that allows you to create interactive, web-based applications for data science and machine learning projects.
+-`Streamlit:` is a Python library that allows you to create interactive, web-based applications for data science and machine learning projects.
 
 ## Team Members
 
