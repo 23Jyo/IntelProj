@@ -1,7 +1,7 @@
 import subprocess
 
 onnx_model_path = "model/model.onnx"
-output_model_path = "optimized_model/model.xml"  # Change to specify the output model path
+output_model_path = "optimized_model/model.xml"  
 
 # Optimize the ONNX model using OpenVINO
 def optimize_model_with_openvino(onnx_model_path, output_model_path):
