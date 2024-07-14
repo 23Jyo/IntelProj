@@ -40,7 +40,7 @@ This problem statement is designed to introduce beginners to the exciting field 
 
 1. Clone the repository:
     ```sh
-    git clone https://github.com/23Jyo/IntelProj.git
+    git clone https://github.com/23Jyo/SiliconSquad.git
     cd <repository-directory>
     ```
 
