@@ -4,7 +4,7 @@ This repository contains solution for Running GenAI on Intel AI Laptops and Simp
 
 ## Acknowledgement
 
-We would like to thank our institutional mentor, Dr. Pradeep C , for his support and guidance. We would also like to thank the industrial mentor, Mr Abhishek Nandy, for taking time out of his busy schedules to provide us with training and for answering our queries. We are very grateful to the Intel Unnati Team for this opportunity. We would like to extend our appreciation to anyone who has supported or helped us in one way or another.
+We would like to thank our institutional mentors, Dr. Pradeep C and Siju Swami, for his support and guidance. We would also like to thank the industrial mentor, Mr Abhishek Nandy, for taking time out of his busy schedules to provide us with training and for answering our queries. We are very grateful to the Intel Unnati Team for this opportunity. We would like to extend our appreciation to anyone who has supported or helped us in one way or another.
 
 ## Problem Statement 
 
