@@ -57,8 +57,19 @@ This problem statement is designed to introduce beginners to the exciting field 
 
 4. Install Intel® OpenVINO™ toolkit:
     Follow the instructions at [Intel OpenVINO Installation Guide](https://docs.openvino.ai/latest/openvino_docs_install_guides_installing_openvino.html)
-
-5. Running the chatbot website:
+5. Text Inference on TinyLlama Model:
+   ```sh
+   tinyllama.py
+   ```
+6. Convert to ONNX format:
+   ```sh
+   convert_to_onnx.py
+   ```
+7. Optimize with OpenVINO
+   ```sh
+   optimize_with_openvino.py
+   ```
+8. Running the chatbot website:
     ```sh
     .\myenv\Scripts\Activate.ps1  # to activate the environment
     streamlit run chatbot_app.py
