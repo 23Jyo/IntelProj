@@ -46,8 +46,8 @@ This problem statement is designed to introduce beginners to the exciting field 
 
 2. Create a virtual environment:
     ```sh
-    python -m venv venv
-    venv\Scripts\activate  # to activate the environment
+    python -m venv myenv
+    .\myenv\Scripts\Activate.ps1  # to activate the environment
     ```
 
 3. Install dependencies:
@@ -58,9 +58,29 @@ This problem statement is designed to introduce beginners to the exciting field 
 4. Install Intel® OpenVINO™ toolkit:
     Follow the instructions at [Intel OpenVINO Installation Guide](https://docs.openvino.ai/latest/openvino_docs_install_guides_installing_openvino.html)
 
-5. Running the chatbot website:
+### Steps taken to create the chatbot.
+
+1. Testing Inference on the TinyLlama model:
+   ```sh
+   python tinyllama.py
+   ```
+
+2. Converting the model to ONNX format:
+   ```sh
+   python convert_to_onnx.py
+   ```
+
+3. Optimize the model using Intel OpenVINO toolkit:
+   ```sh
+   python optimize_with_openvino.py
+   ```
+4. Testing inference ( produces tokens):
+   ```sh
+   python inference_script.py
+   ```
+
+5. Running the chatbot website (generate text as response and create UI using Streamlite):
     ```sh
-    .\myenv\Scripts\Activate.ps1  # to activate the environment
     streamlit run chatbot_app.py
     ```
 
